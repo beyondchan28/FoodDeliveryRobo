@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SaveData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resource/save_data.gd" id="1_d4klt"]
+
+[resource]
+script = ExtResource("1_d4klt")
+last_score = 400
+high_score = 400

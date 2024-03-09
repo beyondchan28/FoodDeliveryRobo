@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://di68l1m0s0jl"]
+
+[ext_resource type="Script" path="res://scripts/csv.gd" id="1_hoyum"]
+
+[node name="CSV" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hoyum")
+
+[node name="JobName" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.444444
+anchor_top = 0.371914
+anchor_right = 0.510417
+anchor_bottom = 0.407407
+text = "Job Name"
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444444
+anchor_top = 0.442901
+anchor_right = 0.856771
+anchor_bottom = 0.552469
+text = "Description"
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+anchor_left = 0.128472
+anchor_top = 0.371914
+anchor_right = 0.288194
+anchor_bottom = 0.442901
+fit_to_longest_item = false
+allow_reselect = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SkillBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.444444
+anchor_top = 0.552469
+anchor_right = 0.571181
+anchor_bottom = 0.770062
+offset_bottom = -3.05176e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Skill1" type="Label" parent="SkillBox"]
+layout_mode = 2
+text = "Skill 1"
+
+[node name="Skill2" type="Label" parent="SkillBox"]
+layout_mode = 2
+text = "Skill 2"
+
+[node name="Skill3" type="Label" parent="SkillBox"]
+layout_mode = 2
+text = "Skill 3"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+text = "BACK TO MAIN MENU"

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsx6o3mp2xhbv"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_g1qex"]
+[ext_resource type="Texture2D" uid="uid://4nixrmyc4bnj" path="res://assets/spritesheet_robotsSide.png" id="2_2p7ot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqws6"]
+size = Vector2(78, 60)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(254, 524)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_g1qex")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_2p7ot")
+region_enabled = true
+region_rect = Rect2(0.370323, 755.705, 157.713, 119.545)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hqws6")
+
+[node name="GrabPosition" type="Node2D" parent="."]
+position = Vector2(0, -73)

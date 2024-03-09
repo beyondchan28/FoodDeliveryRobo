@@ -1,0 +1,185 @@
+[gd_scene load_steps=7 format=3 uid="uid://ba4oj4lr5ojeq"]
+
+[ext_resource type="TileSet" uid="uid://dy0v2jmqmqw7u" path="res://assets/tilemap.tres" id="1_4a6gc"]
+[ext_resource type="Texture2D" uid="uid://4nixrmyc4bnj" path="res://assets/spritesheet_robotsSide.png" id="1_utfw8"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_wm01b"]
+[ext_resource type="Texture2D" uid="uid://cjfkm0slq8t8i" path="res://assets/spritesheet_spaceships.png" id="2_wxqf8"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_sk1r2"]
+radius = 200.0
+height = 120.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_vuud2"]
+size = Vector3(40, 40, 0)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wm01b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.678431, 0.847059, 0.901961, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -456.0
+offset_top = 63.0
+offset_right = 477.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "Food Delivery Robo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Title"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0332262
+anchor_right = 1.02144
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.756863, 0.764706, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -2.0
+offset_right = 65.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+
+[node name="CSVButton" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "CSV DEMO"
+
+[node name="QuitButton" type="Button" parent="ButtonContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_4a6gc")
+format = 2
+layer_0/tile_data = PackedInt32Array(2031617, 140, 0, 2031618, 140, 0, 2031619, 140, 0, 2031620, 140, 0, 2031621, 140, 0, 2031622, 140, 0, 2031623, 140, 0, 2031624, 140, 0, 2031625, 140, 0, 2031626, 140, 0, 2031627, 140, 0, 2031628, 140, 0, 2031629, 140, 0, 2031630, 140, 0, 2031631, 140, 0, 2031632, 140, 0, 2031633, 140, 0, 2031634, 140, 0, 2031635, 140, 0, 2031636, 140, 0, 2031637, 140, 0, 2031638, 140, 0, 2031639, 140, 0, 2031640, 140, 0, 2031641, 140, 0, 2031642, 140, 0, 2031643, 140, 0, 2031644, 140, 0, 2031645, 140, 0, 2031646, 140, 0, 2031647, 140, 0, 2031648, 140, 0, 2031649, 140, 0, 2031650, 140, 0, 2031651, 140, 0, 2031652, 140, 0, 2031653, 140, 0, 2031654, 140, 0, 2031655, 140, 0, 2031656, 140, 0, 2031657, 140, 0, 2031658, 140, 0, 2031659, 140, 0, 2031660, 140, 0, 2031661, 140, 0, 2031662, 140, 0, 2031663, 140, 0, 2031664, 140, 0, 2031665, 140, 0, 2031666, 140, 0, 2031667, 140, 0, 2031668, 140, 0, 2031669, 140, 0, 2031670, 140, 0, 2031671, 140, 0, 2031672, 140, 0, 2031673, 140, 0, 2031674, 140, 0, 2031675, 140, 0, 2031676, 140, 0, 2031677, 140, 0, 2031678, 140, 0, 2031616, 141, 0, 2031679, 141, 268435456, 2228224, 146, 0, 2228225, 145, 0, 2228226, 145, 0, 2228227, 145, 0, 2228228, 145, 0, 2228229, 145, 0, 2228230, 145, 0, 2228231, 145, 0, 2228232, 145, 0, 2228233, 145, 0, 2228234, 145, 0, 2228235, 145, 0, 2228236, 145, 0, 2228237, 145, 0, 2228238, 145, 0, 2228239, 145, 0, 2228240, 145, 0, 2228241, 145, 0, 2228242, 145, 0, 2228243, 145, 0, 2228244, 145, 0, 2228245, 145, 0, 2228246, 145, 0, 2228247, 145, 0, 2228248, 145, 0, 2228249, 145, 0, 2228250, 145, 0, 2228251, 145, 0, 2228252, 145, 0, 2228253, 145, 0, 2228254, 145, 0, 2228255, 145, 0, 2228256, 145, 0, 2228257, 145, 0, 2228258, 145, 0, 2228259, 145, 0, 2228260, 145, 0, 2228261, 145, 0, 2228262, 145, 0, 2228263, 145, 0, 2228264, 145, 0, 2228265, 145, 0, 2228266, 145, 0, 2228267, 145, 0, 2228268, 145, 0, 2228269, 145, 0, 2228270, 145, 0, 2228271, 145, 0, 2228272, 145, 0, 2228273, 145, 0, 2228274, 145, 0, 2228275, 145, 0, 2228276, 145, 0, 2228277, 145, 0, 2228278, 145, 0, 2228279, 145, 0, 2228280, 145, 0, 2228281, 145, 0, 2228282, 145, 0, 2228283, 145, 0, 2228284, 145, 0, 2228285, 145, 0, 2228286, 145, 0, 2228287, 146, 268435456, 2293760, 146, 0, 2359296, 147, 0, 2293761, 145, 0, 2359297, 143, 0, 2293762, 145, 0, 2359298, 143, 0, 2293763, 145, 0, 2359299, 143, 0, 2293764, 145, 0, 2359300, 143, 0, 2293765, 145, 0, 2359301, 143, 0, 2293766, 145, 0, 2359302, 143, 0, 2293767, 145, 0, 2359303, 143, 0, 2293768, 145, 0, 2359304, 143, 0, 2293769, 145, 0, 2359305, 143, 0, 2293770, 145, 0, 2359306, 143, 0, 2293771, 145, 0, 2359307, 143, 0, 2293772, 145, 0, 2359308, 143, 0, 2293773, 145, 0, 2359309, 143, 0, 2293774, 145, 0, 2359310, 143, 0, 2293775, 145, 0, 2359311, 143, 0, 2293776, 145, 0, 2359312, 143, 0, 2293777, 145, 0, 2359313, 143, 0, 2293778, 145, 0, 2359314, 143, 0, 2293779, 145, 0, 2359315, 143, 0, 2293780, 145, 0, 2359316, 143, 0, 2293781, 145, 0, 2359317, 143, 0, 2293782, 145, 0, 2359318, 143, 0, 2293783, 145, 0, 2359319, 143, 0, 2293784, 145, 0, 2359320, 143, 0, 2293785, 145, 0, 2359321, 143, 0, 2293786, 145, 0, 2359322, 143, 0, 2293787, 145, 0, 2359323, 143, 0, 2293788, 145, 0, 2359324, 143, 0, 2293789, 145, 0, 2359325, 143, 0, 2293790, 145, 0, 2359326, 143, 0, 2293791, 145, 0, 2359327, 143, 0, 2293792, 145, 0, 2359328, 143, 0, 2293793, 145, 0, 2359329, 143, 0, 2293794, 145, 0, 2359330, 143, 0, 2293795, 145, 0, 2359331, 143, 0, 2293796, 145, 0, 2359332, 143, 0, 2293797, 145, 0, 2359333, 143, 0, 2293798, 145, 0, 2359334, 143, 0, 2293799, 145, 0, 2359335, 143, 0, 2293800, 145, 0, 2359336, 143, 0, 2293801, 145, 0, 2359337, 143, 0, 2293802, 145, 0, 2359338, 143, 0, 2293803, 145, 0, 2359339, 143, 0, 2293804, 145, 0, 2359340, 143, 0, 2293805, 145, 0, 2359341, 143, 0, 2293806, 145, 0, 2359342, 143, 0, 2293807, 145, 0, 2359343, 143, 0, 2293808, 145, 0, 2359344, 143, 0, 2293809, 145, 0, 2359345, 143, 0, 2293810, 145, 0, 2359346, 143, 0, 2293811, 145, 0, 2359347, 143, 0, 2293812, 145, 0, 2359348, 143, 0, 2293813, 145, 0, 2359349, 143, 0, 2293814, 145, 0, 2359350, 143, 0, 2293815, 145, 0, 2359351, 143, 0, 2293816, 145, 0, 2359352, 143, 0, 2293817, 145, 0, 2359353, 143, 0, 2293818, 145, 0, 2359354, 143, 0, 2293819, 145, 0, 2359355, 143, 0, 2293820, 145, 0, 2359356, 143, 0, 2293821, 145, 0, 2359357, 143, 0, 2293822, 145, 0, 2359358, 143, 0, 2293823, 146, 268435456, 2359359, 147, 268435456, 2097152, 144, 0, 2162688, 144, 0, 2097153, 142, 0, 2162689, 142, 0, 2097154, 142, 0, 2162690, 142, 0, 2097155, 142, 0, 2162691, 142, 0, 2097156, 142, 0, 2162692, 142, 0, 2097157, 142, 0, 2162693, 142, 0, 2097158, 142, 0, 2162694, 142, 0, 2097159, 142, 0, 2162695, 142, 0, 2097160, 142, 0, 2162696, 142, 0, 2097161, 142, 0, 2162697, 142, 0, 2097162, 142, 0, 2162698, 142, 0, 2097163, 142, 0, 2162699, 142, 0, 2097164, 142, 0, 2162700, 142, 0, 2097165, 142, 0, 2162701, 142, 0, 2097166, 142, 0, 2162702, 142, 0, 2097167, 142, 0, 2162703, 142, 0, 2097168, 142, 0, 2162704, 142, 0, 2097169, 142, 0, 2162705, 142, 0, 2097170, 142, 0, 2162706, 142, 0, 2097171, 142, 0, 2162707, 142, 0, 2097172, 142, 0, 2162708, 142, 0, 2097173, 142, 0, 2162709, 142, 0, 2097174, 142, 0, 2162710, 142, 0, 2097175, 142, 0, 2162711, 142, 0, 2097176, 142, 0, 2162712, 142, 0, 2097177, 142, 0, 2162713, 142, 0, 2097178, 142, 0, 2162714, 142, 0, 2097179, 142, 0, 2162715, 142, 0, 2097180, 142, 0, 2162716, 142, 0, 2097181, 142, 0, 2162717, 142, 0, 2097182, 142, 0, 2162718, 142, 0, 2097183, 142, 0, 2162719, 142, 0, 2097184, 142, 0, 2162720, 142, 0, 2097185, 142, 0, 2162721, 142, 0, 2097186, 142, 0, 2162722, 142, 0, 2097187, 142, 0, 2162723, 142, 0, 2097188, 142, 0, 2162724, 142, 0, 2097189, 142, 0, 2162725, 142, 0, 2097190, 142, 0, 2162726, 142, 0, 2097191, 142, 0, 2162727, 142, 0, 2097192, 142, 0, 2162728, 142, 0, 2097193, 142, 0, 2162729, 142, 0, 2097194, 142, 0, 2162730, 142, 0, 2097195, 142, 0, 2162731, 142, 0, 2097196, 142, 0, 2162732, 142, 0, 2097197, 142, 0, 2162733, 142, 0, 2097198, 142, 0, 2162734, 142, 0, 2097199, 142, 0, 2162735, 142, 0, 2097200, 142, 0, 2162736, 142, 0, 2097201, 142, 0, 2162737, 142, 0, 2097202, 142, 0, 2162738, 142, 0, 2097203, 142, 0, 2162739, 142, 0, 2097204, 142, 0, 2162740, 142, 0, 2097205, 142, 0, 2162741, 142, 0, 2097206, 142, 0, 2162742, 142, 0, 2097207, 142, 0, 2162743, 142, 0, 2097208, 142, 0, 2162744, 142, 0, 2097209, 142, 0, 2162745, 142, 0, 2097210, 142, 0, 2162746, 142, 0, 2097211, 142, 0, 2162747, 142, 0, 2097212, 142, 0, 2162748, 142, 0, 2097213, 142, 0, 2162749, 142, 0, 2097214, 142, 0, 2162750, 142, 0, 2097215, 144, 268435456, 2162751, 144, 268435456)
+
+[node name="HintBackground" type="MeshInstance2D" parent="."]
+position = Vector2(835, 468)
+scale = Vector2(0.5, 0.5)
+mesh = SubResource("SphereMesh_sk1r2")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="HintBackground"]
+position = Vector2(-148, 48)
+rotation = 0.358313
+mesh = SubResource("PrismMesh_vuud2")
+
+[node name="Label" type="Label" parent="HintBackground"]
+offset_left = -184.0
+offset_top = -42.0
+offset_right = 188.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "HIGHSCORE : 999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(729, 534)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_utfw8")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0.370323, 755.705, 157.713, 119.545)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(404, 524)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_utfw8")
+region_enabled = true
+region_rect = Rect2(-0.333344, 325, 184.667, 152)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(144, 378)
+rotation = -0.45019
+texture = ExtResource("2_wxqf8")
+region_enabled = true
+region_rect = Rect2(124.224, 144.666, 123.555, 121.669)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(893, 260)
+rotation = -0.299083
+texture = ExtResource("2_wxqf8")
+region_enabled = true
+region_rect = Rect2(0.998322, -0.328662, 122.668, 106.667)
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(1069, 454)
+rotation = 0.321372
+texture = ExtResource("2_wxqf8")
+region_enabled = true
+region_rect = Rect2(0, 294, 123.74, 127)
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(416, 244)
+rotation = 0.341872
+texture = ExtResource("2_wxqf8")
+region_enabled = true
+region_rect = Rect2(372.381, 0.668444, 124.398, 120.493)
+
+[node name="CreditContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="CreditContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "ASSET BY :  KENNEY"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CreditContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "SOUND BY :  SIMON13666"
+horizontal_alignment = 2
+vertical_alignment = 1
