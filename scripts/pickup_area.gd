@@ -7,7 +7,8 @@ func _process(delta):
 	if !player.is_had_package and self.has_overlapping_bodies() and Input.is_action_just_pressed("pickup"):
 		player.is_had_package = true
 		player.grab_package()
-		print("picking up")
+		$AudioStreamPlayer._set_playing(true)
+		#print("picking up")
 
 
 

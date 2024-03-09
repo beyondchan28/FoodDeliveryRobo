@@ -36,4 +36,4 @@ func grab_package():
 	tween.tween_property(grabbed_package, "global_position", $GrabPosition.global_position, 0.3)
 	await tween.finished
 	grabbed_package.set_physics_process(true)
-	print(grabbed_package.box_index)
+	#print(grabbed_package.box_index)

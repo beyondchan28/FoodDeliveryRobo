@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://bde0mxfvi5id2"]
+
+[ext_resource type="Script" path="res://scripts/recipient.gd" id="1_nk68w"]
+[ext_resource type="Texture2D" uid="uid://dhjban0i3hi3b" path="res://assets/spritesheet_lasers.png" id="2_1db3s"]
+[ext_resource type="Texture2D" uid="uid://bico2unn7ehw8" path="res://assets/Tiles/tile_0106.png" id="3_bgigd"]
+[ext_resource type="AudioStream" uid="uid://vbe47maqi2p6" path="res://assets/SFX/Beep7.wav" id="4_0vst6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t71e8"]
+size = Vector2(61, 60)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3bv5l"]
+radius = 40.0
+height = 50.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_2mcuo"]
+size = Vector3(20, 20, 0)
+
+[sub_resource type="Curve" id="Curve_rgigg"]
+max_value = 10.0
+_data = [Vector2(0.0412621, 2.88679), 0.0, 0.0, 0, 0, Vector2(0.211165, 7.73585), 0.0, 0.0, 0, 0, Vector2(0.487864, 8.33962), 0.0, 0.0, 0, 0, Vector2(0.798544, 5.4717), 0.0, 0.0, 0, 0, Vector2(1, 5.16981), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[node name="Recipient" type="Area2D"]
+position = Vector2(0, 33)
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_nk68w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -33)
+scale = Vector2(1, 3.12)
+texture = ExtResource("2_1db3s")
+region_enabled = true
+region_rect = Rect2(563.556, -0.665668, 67.5555, 100.444)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 88)
+shape = SubResource("RectangleShape2D_t71e8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 38.0
+offset_top = -61.0
+offset_right = 101.0
+offset_bottom = -38.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Address"
+
+[node name="DeliveredPos" type="Node2D" parent="."]
+position = Vector2(-2, -120)
+
+[node name="HintBackground" type="MeshInstance2D" parent="."]
+position = Vector2(80, -239)
+mesh = SubResource("SphereMesh_3bv5l")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="HintBackground"]
+position = Vector2(-33, 16)
+rotation = 0.821961
+mesh = SubResource("PrismMesh_2mcuo")
+
+[node name="Hint" type="Sprite2D" parent="."]
+position = Vector2(80, -243)
+scale = Vector2(2, 2)
+texture = ExtResource("3_bgigd")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(3, 15)
+emitting = false
+amount = 32
+one_shot = true
+emission_shape = 3
+emission_rect_extents = Vector2(30, 0)
+direction = Vector2(0, 0)
+gravity = Vector2(0, -100)
+angular_velocity_min = 233.51
+angular_velocity_max = 233.51
+scale_amount_curve = SubResource("Curve_rgigg")
+color = Color(0.988235, 0.921569, 0.768627, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0vst6")

@@ -25,11 +25,13 @@ func check_box():
 	else:
 		get_parent().get_parent().scoring.emit(-correct_score)
 		#print("Incorrect box delivered")
-		
+	player.grabbed_package.queue_free()
 
 func delivery_transition():
 	var tween = create_tween()
+	$CPUParticles2D.set_emitting(true)
+	$AudioStreamPlayer._set_playing(true)
 	tween.tween_property(player.grabbed_package, "global_position", $DeliveredPos.global_position, 0.6)
 	await tween.finished
-	player.grabbed_package.queue_free()
 	check_box()
+	
